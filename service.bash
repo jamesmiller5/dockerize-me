@@ -7,5 +7,5 @@ set -e
 
 while true
 do 
-	{ echo -e 'HTTP/1.1 200 OK\r\n'; cat "$DIR/index.html"; } | nc -l "$LISTEN" > /dev/null
+	{ echo -e 'HTTP/1.1 200 OK\r\n'; date; } | nc -l "$LISTEN" > /dev/null
 done
