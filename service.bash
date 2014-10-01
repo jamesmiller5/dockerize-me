@@ -1,5 +1,11 @@
 #!/bin/bash
+#Where this script is
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+LISTEN=${1:-8008}
+
+set -e
+
 while true
 do 
-	{ echo -e 'HTTP/1.1 200 OK\r\n'; cat index.html; } | nc -l 8008 > /dev/null
+	{ echo -e 'HTTP/1.1 200 OK\r\n'; cat "$DIR/index.html"; } | nc -l "$LISTEN" > /dev/null
 done
